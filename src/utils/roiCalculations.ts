@@ -16,6 +16,13 @@ export const formatCurrency = (value: number, currency: string = 'USD'): string 
 
 export const formatPercent = (value: number): string => `${Math.round(value)}%`;
 
+export const calculateROI = (
+  currentState: ROICurrentState,
+  futureState: ROIFutureState,
+  userCount: number,
+  currency: string
+): ROIResults => {
+  // Current State Calculations
   const serversAnnual = currentState.physicalServers / 3;
   const storageAnnual = currentState.storageSystems / 3;
   const networkAnnual = currentState.networkEquipment / 5;
@@ -164,3 +171,4 @@ export const formatPercent = (value: number): string => `${Math.round(value)}%`;
       }
     }
   };
+};
