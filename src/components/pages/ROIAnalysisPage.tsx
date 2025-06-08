@@ -110,9 +110,9 @@ export function ROIAnalysisPage() {
   });
 
   useEffect(() => {
-    const calculated = calculateROI(currentState, futureState, userCount, currency);
+    const calculated = calculateROI(currentState, futureState, userCount);
     setResults(calculated);
-  }, [currentState, futureState, userCount, currency]);
+  }, [currentState, futureState, userCount]);
 
   const exportResults = () => {
     if (!results) return;
