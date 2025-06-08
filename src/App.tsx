@@ -13,11 +13,11 @@ import { QuickReferencePage } from './components/pages/QuickReferencePage';
 import { AppendixPage } from './components/pages/AppendixPage';
 import { ValueValidationPage } from './components/pages/ValueValidationPage';
 import { TCOAnalysisPage } from './components/pages/TCOAnalysisPage';
+import { ROIAnalysisPage } from './components/pages/ROIAnalysisPage';
 
 function App() {
   const [activeSection, setActiveSection] = useState('home');
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-
   const renderContent = () => {
     switch (activeSection) {
       case 'home':
@@ -35,7 +35,7 @@ function App() {
       case 'objections':
          return <ObjectionHandlingPage />;  
       case 'cases':
-        return <CaseStudiesPage />;  
+        return <CaseStudiesPage />;
       case 'validation':
         return <ValueValidationPage />;
       case 'quickref':
@@ -44,11 +44,11 @@ function App() {
         return <AppendixPage />;
       case 'tco':
         return <TCOAnalysisPage />;
+      case 'roi':
+        return <ROIAnalysisPage />;
       default:
-        return <HomePage />;
     }
   };
-
   return (
     <div className="min-h-screen bg-gray-50">
       {/* Header */}
@@ -58,7 +58,6 @@ function App() {
             <h1 className="text-2xl font-bold text-purple-700">
               Nerdio Playbook V10
             </h1>
-            
             <button
               className="md:hidden p-2"
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
@@ -68,14 +67,12 @@ function App() {
           </div>
         </div>
       </header>
-
       <div className="flex">
-        <Sidebar 
+        <Sidebar
           activeSection={activeSection}
           setActiveSection={setActiveSection}
           mobileMenuOpen={mobileMenuOpen}
         />
-        
         <main className="flex-1 p-4 md:p-8">
           {renderContent()}
         </main>
@@ -83,5 +80,4 @@ function App() {
     </div>
   );
 }
-
 export default App;

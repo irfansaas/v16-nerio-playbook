@@ -1,13 +1,11 @@
 // data/navigation.data.ts
-import { Home, Target, Users, BookOpen, Calculator, TrendingUp, Shield, Briefcase, CheckSquare, Zap, FileText } from 'lucide-react';
-
+import { Home, Target, Users, BookOpen, Calculator, TrendingUp, Shield, Briefcase, CheckSquare, Zap, FileText, DollarSign } from 'lucide-react';
 export interface NavigationItem {
   id: string;
   title: string;
   icon: any;
   description?: string;
 }
-
 export const navigationData: NavigationItem[] = [
   
     {
@@ -47,9 +45,15 @@ export const navigationData: NavigationItem[] = [
       description: 'Comprehensive 3-Year Total Cost of Ownership Calculator'
     },
     {
+      id: 'roi',
+      title: 'ROI Analysis',
+      icon: DollarSign,
+      description: '3-Year Return on Investment Calculator with Sensitivity Analysis'
+    },
+    {
       id: 'segments',
       title: 'Segment Playbooks',
-      icon: Briefcase,  // <-- Change this from TrendingUp
+      icon: Briefcase,
       description: 'Master approaches for each company segment'
     },
     // ... rest of the navigation items
@@ -85,17 +89,13 @@ export const navigationData: NavigationItem[] = [
   },
   
 ];
-
-
 // Debug logging
 console.log('=== NERDIO DATA FILE LOADED ===');
 console.log('Total navigation items:', navigationData.length);
 console.log('Has TCO?', navigationData.some(item => item.id === 'tco'));
 console.log('TCO item:', navigationData.find(item => item.id === 'tco'));
 console.log('All navigation IDs:', navigationData.map(item => item.id));
-
 // Continue with the rest of your exports...
-
 // data/interview-stages.data.ts
 export interface InterviewStage {
   id: string;
@@ -104,7 +104,6 @@ export interface InterviewStage {
   objective: string;
   focusAreas: string[];
 }
-
 export const interviewStagesData: InterviewStage[] = [
   {
     id: 'recruiter',
@@ -142,7 +141,6 @@ export const interviewStagesData: InterviewStage[] = [
     focusAreas: ['Market perspective', 'Strategic vision', '90-day plan', 'Leadership qualities']
   }
 ];
-
 // data/segments.data.ts
 export interface SegmentData {
   id: string;
@@ -157,7 +155,6 @@ export interface SegmentData {
   discoveryQuestions: string[];
   commonObjections: string[];
 }
-
 export const segmentsData: Record<string, SegmentData> = {
   smb: {
     id: 'smb',
@@ -256,7 +253,6 @@ export const segmentsData: Record<string, SegmentData> = {
     ]
   }
 };
-
 // data/objections.data.ts
 export interface ObjectionData {
   id: string;
@@ -267,7 +263,6 @@ export interface ObjectionData {
   keyPoints: string[];
   successMetrics: string[];
 }
-
 export const objectionsData: ObjectionData[] = [
   {
     id: 'azure-cost',
@@ -324,7 +319,6 @@ export const objectionsData: ObjectionData[] = [
     ]
   }
 ];
-
 // data/scenarios.data.ts
 export interface ScenarioData {
   id: string;
@@ -336,7 +330,6 @@ export interface ScenarioData {
   hiddenFactors: string[];
   successPath: string[];
 }
-
 export const scenariosData: ScenarioData[] = [
   {
     id: 'smb-crisis',
@@ -379,7 +372,6 @@ export const scenariosData: ScenarioData[] = [
     ]
   }
 ];
-
 // data/checklists.data.ts
 export interface ChecklistItem {
   id: string;
@@ -387,7 +379,6 @@ export interface ChecklistItem {
   category?: string;
   priority?: 'high' | 'medium' | 'low';
 }
-
 export const recruiterChecklistData: ChecklistItem[] = [
   { id: 'rec1', text: 'Review Ben Murphy connection story', priority: 'high' },
   { id: 'rec2', text: 'Practice 30-second elevator pitch', priority: 'high' },
@@ -397,7 +388,6 @@ export const recruiterChecklistData: ChecklistItem[] = [
   { id: 'rec6', text: 'Prepare salary expectations answer', priority: 'medium' },
   { id: 'rec7', text: 'Ready to explain job transitions', priority: 'medium' }
 ];
-
 export const ninetyDayPlanData: Record<string, ChecklistItem[]> = {
   foundation: [
     { id: 'f1', text: 'Complete Nerdio certification', category: 'learning' },
