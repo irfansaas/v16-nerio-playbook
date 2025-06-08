@@ -2,11 +2,10 @@ import { useState, useEffect } from 'react';
 // @ts-ignore
 import { Download, RefreshCw } from 'lucide-react';
 import { TrendingUp, DollarSign, Calculator, BarChart3, FileText, } from 'lucide-react';
-import { Card } from '../common/Card';
 import { AnimatedSection } from '../common/AnimatedSection';
 import { useLocalStorage } from '../../hooks/useLocalStorage';
 import { ROICurrentState, ROIFutureState, ROIResults } from '../../types/roi.types';
-import { calculateROI, formatCurrency, formatPercent } from '../../utils/roiCalculations';
+import { calculateROI } from '../../utils/roiCalculations';
 import { ROISummaryTab } from './ROISummaryTab';
 import { ROICurrentStateTab } from './ROICurrentStateTab';
 import { ROIFutureStateTab } from './ROIFutureStateTab';
