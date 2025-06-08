@@ -20,7 +20,6 @@ export const calculateROI = (
   currentState: ROICurrentState,
   futureState: ROIFutureState,
   userCount: number,
-  currency: string
 ): ROIResults => {
   // Current State Calculations
   const serversAnnual = currentState.physicalServers / 3;
